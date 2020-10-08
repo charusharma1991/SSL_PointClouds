@@ -1,7 +1,7 @@
 # Self-Supervised Few-Shot Learning on Point Clouds
 
 ### About
-This is a source code for our [NeurIPS 2020](https://nips.cc/) paper: [Self-Supervised Few-Shot Learning on Point Clouds](https://arxiv.org/abs/2009.14168). We propose two novel self-supervised pre-training tasks that encode a hierarchical partitioning of the point clouds using a cover-tree, where point cloud subsets lie within balls of varying radii at each level of the cover-tree.
+This is a source code for our [NeurIPS 2020](https://nips.cc/Conferences/2020/) paper: [Self-Supervised Few-Shot Learning on Point Clouds](https://arxiv.org/abs/2009.14168). We propose two novel self-supervised pre-training tasks that encode a hierarchical partitioning of the point clouds using a cover-tree, where point cloud subsets lie within balls of varying radii at each level of the cover-tree.
 
 ### Requirements
 
