@@ -13,13 +13,6 @@ Activate the environment before executing the program as follows:
 ```
 source activate pytorch35
 ```
-### Installation
-Run the following command to install the dependencies required to run the code.
-```
-python -r requirements.txt
-```
-If your default python version is 2.X, we request you to switch to 3.X.
-
 ### Usage
 The directory End2End contains the end to end pipeline to run the code. 
 Run the following command to reproduce the results on Celegans dataset.
