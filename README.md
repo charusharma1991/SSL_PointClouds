@@ -19,12 +19,12 @@ This code has three parts to run.
 2. Self-supervised learning in a FSL set up. Refer directory "SSL".
 3. Point cloud classification using learned point cloud embeddings in step 2. Refer directory "Classification".
 
-Run the following command to reproduce the results on Sydney dataset.
+Run the following commands to reproduce the results on Sydney dataset.
 1. First, go to the directory "Covertree" and run:
 ```
 python test_covertree.py 2.0
 ```
-Here "2.0" is the base of the radius for covertree. This will generate data for SSL in dataset directory under "dict" directory. We use the base code for covertree from [here](https://github.com/n8epi/CoverTree).
+Here "2.0" is the base of the radius for covertree. This will generate data for SSL in dataset directory under "dict". We use the base code for covertree generation from [here](https://github.com/n8epi/CoverTree).
 
 2. Go to the "SSL" directory and run:
 ```
@@ -32,16 +32,17 @@ python train_FSL.py
 ```
 This will generate model using our two self-supervised learning tasks.
 
-3. Finally, go to the directory "Classification". Run:
+3. Finally, go to the directory "Classification" and run:
 ```
 python train_classifier.py
 ```
-There are DGCNN and PointNet networks in this code for downstream classification task.
+There are DGCNN and PointNet networks in this directory for downstream classification task.
 We thank the authors of DGCNN[1] and PointNet[2] for providing their code.
 
 [1] Wang, Yue, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, and Justin M. Solomon. "Dynamic graph cnn for learning on point clouds." Acm Transactions On Graphics (tog) 38, no. 5 (2019): 1-12.
 
 [2] Qi, Charles R., Hao Su, Kaichun Mo, and Leonidas J. Guibas. "Pointnet: Deep learning on point sets for 3d classification and segmentation." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 652-660. 2017.
+
 ### Citation
 Please cite the paper if you use this code.
 ```
