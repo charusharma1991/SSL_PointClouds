@@ -40,6 +40,7 @@ There are DGCNN and PointNet networks in this code for downstream classification
 We thank the authors of DGCNN[1] and PointNet[2] for providing their code.
 
 [1] Wang, Yue, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, and Justin M. Solomon. "Dynamic graph cnn for learning on point clouds." Acm Transactions On Graphics (tog) 38, no. 5 (2019): 1-12.
+
 [2] Qi, Charles R., Hao Su, Kaichun Mo, and Leonidas J. Guibas. "Pointnet: Deep learning on point sets for 3d classification and segmentation." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 652-660. 2017.
 ### Citation
 Please cite the paper if you use this code.
