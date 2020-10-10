@@ -14,24 +14,33 @@ Activate the environment before executing the program as follows:
 source activate pytorch35
 ```
 ### Usage
-The directory End2End contains the end to end pipeline to run the code. 
-Run the following command to reproduce the results on Celegans dataset.
-```
-bash end2end.sh
-```
-The bash file currently has code for Celegans dataset, provided as an example. You can change the dataset name and corresponding hyperparameters from the table given in the paper to reproduce the results.
-This directory has the complete pipeline, from generating the spectral walks, running the par2vec model to learn primary node embeddings and finally running the link prediction model.
+This code has three parts to run. 
+1. Generate covertree and ball pair data for self-supervised labels. Refer directory "Covertree".
+2. Self-supervised learning in a FSL set up. Refer directory "SSL".
+3. Point cloud classification using learned point cloud embeddings in step 2. Refer directory "Classification".
 
-The src directory contains the code just for link prediction and node classification with precomputed spectral-biased random walk and paragraph vector model output.
-Run the following command to run just the link prediction part of the entire pipleline
+Run the following command to reproduce the results on Sydney dataset.
+1. First, go to the directory "Covertree" and run:
 ```
-python LP.py
+python test_covertree.py 2.0
 ```
-The LP.py is the python script which will run the link prediction model on all datasets and store the results in a text file inside the directory result_logs/LP.
+Here "2.0" is the base of the radius for covertree. This will generate data for SSL in dataset directory under "dict" directory. We use the base code for covertree from [here](https://github.com/n8epi/CoverTree).
 
-The NC.py is the python script which will run the node classification model on the datasets- cora and citeseer and store the results in a text file inside the directory result_logs/NC.
+2. Go to the "SSL" directory and run:
+```
+python train_FSL.py
+```
+This will generate model using our two self-supervised learning tasks.
 
+3. Finally, go to the directory "Classification". Run:
+```
+python train_classifier.py
+```
+There are DGCNN and PointNet networks in this code for downstream classification task.
+We thank the authors of DGCNN[1] and PointNet[2] for providing their code.
 
+[1] Wang, Yue, Yongbin Sun, Ziwei Liu, Sanjay E. Sarma, Michael M. Bronstein, and Justin M. Solomon. "Dynamic graph cnn for learning on point clouds." Acm Transactions On Graphics (tog) 38, no. 5 (2019): 1-12.
+[2] Qi, Charles R., Hao Su, Kaichun Mo, and Leonidas J. Guibas. "Pointnet: Deep learning on point sets for 3d classification and segmentation." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 652-660. 2017.
 ### Citation
 Please cite the paper if you use this code.
 ```
